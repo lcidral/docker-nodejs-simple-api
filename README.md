@@ -18,8 +18,12 @@ curl -X GET \
 Response: 
 ```json
 {
-  "status":"Microservice is Ready!",
-  "mode":"development"
+    "name": "docker-nodejs-simple-api",
+    "author": "Leonardo Cidral <lcidral@gmail.com>",
+    "description": "Simple api with NodeJS + Express & Docker",
+    "mode": "development",
+    "version": "1.0.0",
+    "license": "MIT"
 }
 ```                              
 
