@@ -1,0 +1,11 @@
+version: '3'
+services:
+  my-simple-microservice:
+    container_name: "my-simple-microservice"
+    build:
+      context: .
+    ports:
+      - "9030:9030"
+    env_file:
+      - .env
+    command: yarn dev
