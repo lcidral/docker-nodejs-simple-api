@@ -1,13 +1,17 @@
 import { Router } from "express";
 import EntityController from "./app/controllers/EntityController";
+import packageConfig from '../package.json';
 
 const routes = new Router();
 
 routes.get("/", (req, res) => {
   return res.json({
-    status: "Microservice is Ready!",
+    name: packageConfig.name,
+    author: packageConfig.author,
+    description: packageConfig.description,
     mode: process.env.APP_RUNNING_MODE,
-    version: process.env.APP_VERSION
+    version: packageConfig.version,
+    license: packageConfig.license
   });
 });
 
