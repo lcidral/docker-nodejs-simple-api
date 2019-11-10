@@ -1,6 +1,7 @@
 import { Router } from "express";
 import EntityController from "./app/controllers/EntityController";
 import packageConfig from '../package.json';
+import containerInspect from '../container.json';
 
 const routes = new Router();
 
@@ -12,7 +13,7 @@ routes.get("/", (req, res) => {
     mode: process.env.APP_RUNNING_MODE,
     version: packageConfig.version,
     license: packageConfig.license
-  });
+  }, containerInspect);
 });
 
 routes.get('/entity', EntityController.get);
