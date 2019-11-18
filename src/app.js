@@ -3,6 +3,7 @@ import express from 'express';
 import routes from './routes';
 import logo from 'asciiart-logo';
 import packageConfig from '../package.json';
+import logo from 'asciiart-logo';
 
 class App {
   constructor() {
@@ -19,16 +20,21 @@ class App {
 
   routes() {
     this.server.use(routes)
+    this.server.use((request, response, next) => {
+      console.time("Request");
+      console.log(
+        `${request.method}; URL: ${request.url}`
+      );
+      next();
+      console.timeEnd("Request");
+    });
   }
 
   banner() {
     const longText =
-      'Nisi ut aliquip ex ea commodo consequat. Duis aute ' +
-      'irure dolor in reprehenderit in voluptate velit esse ' +
-      'Excepteur sint occaecat cupidatat non proident, ' +
-      'sunt in culpa qui officia deserunt mollit anim ' +
-      'id est laborum.';
-
+      'This repository is the result of my studies using of Docker, ' +
+      'NodeJS, GraphQL, Performance and Stress Tests, Kubernetes, ' +
+      'React, React Native and Security issues.';
     console.log(
       logo(packageConfig)
         .emptyLine()

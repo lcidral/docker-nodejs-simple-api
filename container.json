@@ -14,7 +14,7 @@
             "Restarting": false,
             "OOMKilled": false,
             "Dead": false,
-            "Pid": 0000,
+            "Pid": 0,
             "ExitCode": 0,
             "Error": "",
             "StartedAt": "",
@@ -75,7 +75,7 @@
             "SecurityOpt": null,
             "UTSMode": "",
             "UsernsMode": "",
-            "ShmSize": 00000000,
+            "ShmSize": 0,
             "Runtime": "",
             "ConsoleSize": [
                 0,

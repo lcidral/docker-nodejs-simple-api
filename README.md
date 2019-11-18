@@ -4,6 +4,19 @@ After run, create a .env file, use .env.exemple.
 ## TO BUILD and RUN your microservice
 `docker-compose up -d --build`
 
+or
+
+`docker build . -t microservice:1.0.0`
+
+and
+
+`docker container run -d -p 9030:9030 microservice:1.0.0
+
+## Expose docker container inspect
+`docker container inspect CONTAINER_ID > container.json`
+
+Rebuild the image.
+
 ## Execute HTTP requests
 To test your microservice, open your Terminal and run the commands below.
 
@@ -18,12 +31,8 @@ curl -X GET \
 Response: 
 ```json
 {
-    "name": "docker-nodejs-simple-api",
-    "author": "Leonardo Cidral <lcidral@gmail.com>",
-    "description": "Simple api with NodeJS + Express & Docker",
-    "mode": "development",
-    "version": "1.0.0",
-    "license": "MIT"
+    "container": {...},
+    "package": {...},
 }
 ```                              
 
