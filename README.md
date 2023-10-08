@@ -1,4 +1,4 @@
-# Deploying a microservice with NodeJS, Express and Docker
+# Deploy a simple api with NodeJS, Express and Docker
 After run, create a .env file, use .env.exemple.
 
 ## TO BUILD and RUN your microservice
